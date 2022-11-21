@@ -17,12 +17,12 @@ class Main {
   private String makeGuess(){
     Scanner input = new Scanner(System.in);
     System.out.println("What is your guess?");
-    guess = input.nextLine();
+    String guess = input.nextLine();
     System.out.println(guess);
     
     
 
-    ArrayList<Charachter> charachterList = new ArrayList<Charachter>();
+    ArrayList<Character> charachterList = new ArrayList<Character>();
     ArrayList<Integer> guessesRemaining = new ArrayList<Integer>();
     // Sequence through the phrase and check if the the charachter matches the phrase
     for (int i = 0; i < currentPhrase.length(); i++){
