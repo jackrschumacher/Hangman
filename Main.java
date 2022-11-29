@@ -2,7 +2,7 @@ import java.util.*;
 
 class Main {
   public static void main(String[] args) {
-    Hangman = new Hangman();
+    Hangman game = new Hangman();
 
 
     

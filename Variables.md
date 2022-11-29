@@ -1,3 +1,0 @@
-# Variables
-
-* Current String
