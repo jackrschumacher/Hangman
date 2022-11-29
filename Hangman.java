@@ -47,9 +47,11 @@ public class Hangman {
 
   private void getLetter(){
     Scanner input = new Scanner(System.in);
-    for(int guessesRemaining = 0; guessesRemaining < 6){
+    Character guess = ' ';
+    for(int guessesRemaining = 0; guessesRemaining < 6; guessesRemaining++){
       System.out.println("Please Enter a Letter that you wish to Guess");
-      guessedLetters[] = input.nextLine();
+      guess = input.next().charAt(0);
+
       
     }
     // Get the guessed letter
@@ -57,12 +59,13 @@ public class Hangman {
     // Check to make sure that it is a letter -> No spaces, or special characters or numbers
     // To Do:
     // Do loop with input until you get a valid guess
-
+  return;
   }
   private boolean findLetter(char letter){
     // Search in the current phrase array for all occurances of letter
     // At each time you find the letter, fill in the value in the guessed phrase array
     // If found, return true, else return false
+  return;
   }
 
   // To Do:
