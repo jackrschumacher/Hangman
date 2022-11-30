@@ -48,12 +48,17 @@ public class Hangman {
   private void getLetter(){
     Scanner input = new Scanner(System.in);
     Character guess = ' ';
-    for(int guessesRemaining = 0; guessesRemaining < 6; guessesRemaining++){
+    while(int guessesRemaining = 0; guessesRemaining < 6; guessesRemaining++){
       System.out.println("Please Enter a Letter that you wish to Guess");
       guess = input.next().charAt(0);
-
-      
+      if(guess == guessedLetters[guessesRemaining]){
+        System.out.println("You find a new letter!"+ guess);
+      }
+      else{
+        System.out.println("You do not find a letter that matches.");
+      }
     }
+    
     // Get the guessed letter
     // Check to make sure that it already has not been guessed
     // Check to make sure that it is a letter -> No spaces, or special characters or numbers
