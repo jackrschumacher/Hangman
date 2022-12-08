@@ -33,9 +33,11 @@ public class Hangman {
 	private void setupWord(String phrase) {
 		// Loops through the phrase and fills it in with underscores (_) and sets up the
 		// guessed and current phrase
+		char letter;
 		for (int i = 0; i < phrase.length(); i++) {
-			System.out.println(phrase.charAt(i));
-			currentPhrase.add(phrase.charAt(i).toUpperCase());
+			letter = phrase.charAt(i);
+			letter = Character.toUpperCase(letter);
+			currentPhrase.add(letter);
 			if (phrase.charAt(i) == ' ') {
 				guessedPhrase.add(' ');
 			} else {
@@ -44,8 +46,8 @@ public class Hangman {
 
 		}
 
-		System.out.println("Guessed Phrase:" + guessedPhrase.get(1));
-		System.out.println(currentPhrase.get(1));
+		System.out.println("Guessed Phrase:" + guessedPhrase.toString());
+		System.out.println(currentPhrase.toString());
 		return;
 	}
 
@@ -101,6 +103,7 @@ public class Hangman {
 			foundLetter = findLetter(guess);
 			if(foundLetter){
 				System.out.println("You found the Letter: " + guess);
+				System.out.println(guessedPhrase.toString());
 			}
 			else{
 				System.out.println("You did not find the Letter: " + guess);
