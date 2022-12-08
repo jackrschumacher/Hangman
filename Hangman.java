@@ -47,7 +47,7 @@ public class Hangman {
 		}
 
 		System.out.println("Guessed Phrase:" + guessedPhrase.toString());
-		System.out.println(currentPhrase.toString());
+		
 		return;
 	}
 
@@ -97,16 +97,31 @@ public class Hangman {
 		int guessesRemaining = 6;
 		char guess;
 		boolean foundLetter;
+		int filledSpaces = 0;
 		
 		while(guessesRemaining > 0){
 			guess = getLetter();
 			foundLetter = findLetter(guess);
 			if(foundLetter){
 				System.out.println("You found the Letter: " + guess);
+				for(int i = 0; i < guessedPhrase.size(); i++){
+					if(guessedPhrase.get(i) != '_'){
+						filledSpaces += 1;
+						if(filledSpaces == guessedPhrase.size()){
+							System.out.println("Congratulations, You Win!");
+						}
+					}
+					
+					
+				}
 				System.out.println(guessedPhrase.toString());
+				
 			}
 			else{
 				System.out.println("You did not find the Letter: " + guess);
+				guessesRemaining = guessesRemaining -1;
+				System.out.println("You lost 1 guess.");
+				System.out.println("You have " + guessesRemaining+" guesses remaining");
 			}
 			
 	}
