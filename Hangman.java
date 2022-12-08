@@ -93,7 +93,7 @@ public class Hangman {
 		// phrase.");
 			// If guessed Letter is equal to guessedLetters list (list of all the letters that the user has inputted) at the index of the current guess 
 			// Search for letter in the PHRASE_LIST
-			
+		
 		int guessesRemaining = 6;
 		char guess;
 		boolean foundLetter;
@@ -122,6 +122,22 @@ public class Hangman {
 				guessesRemaining = guessesRemaining -1;
 				System.out.println("You lost 1 guess.");
 				System.out.println("You have " + guessesRemaining+" guesses remaining");
+				
+				if(guessesRemaining == 0){
+					System.out.println("Unfortunatley, you did not win! Better luck next time.");
+				}
+				else if(guessesRemaining  == 5){
+					System.out.println("+---+\n"+
+														"|   |\n"+
+														"|\n"+
+														"|\n"+
+														"|\n"+
+														"|\n"+
+														"=========");
+				}
+				else if(guessesRemaining == 4){
+					 System.out.println("");
+				}
 			}
 			
 	}
