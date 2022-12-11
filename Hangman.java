@@ -125,6 +125,7 @@ public class Hangman {
 				
 				if(guessesRemaining == 0){
 					System.out.println("Unfortunatley, you did not win! Better luck next time.");
+					
 				}
 				else if(guessesRemaining  == 5){
 					System.out.println("+---+\n"+
@@ -136,7 +137,40 @@ public class Hangman {
 														"=========");
 				}
 				else if(guessesRemaining == 4){
-					 System.out.println("");
+					 System.out.println("+---+\n"+
+														 "|   |\n"+
+														 "|   O\n"+
+														 "|\n"+
+														 "|\n"+
+														 "|\n"+
+														 "=========\n");
+				}
+				else if(guessesRemaining == 3){
+					System.out.println("+---+\n"+
+														"|   |\n"+
+														"|   O\n"+
+														"|  -|-\n"+
+														"|\n"+
+														"|\n"+
+														"=========");
+				}
+				else if(guessesRemaining == 2){
+					System.out.println("+---+\n"+
+														"|   |\n"+
+														"|   O\n"+
+													  "|  -|-\n"+
+														"|   []\n"+
+													  "| 	  \n"+
+													"=========");
+				}
+				else if(guessesRemaining == 1){
+					System.out.println("+---+\n"+
+														"|   |\n"+
+														"|   O\n"+
+													  "|  -|-\n"+
+													  "|   []\n"+
+													  "|    \n"+
+													"=========");
 				}
 			}
 			
