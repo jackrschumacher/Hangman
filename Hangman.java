@@ -97,20 +97,23 @@ public class Hangman {
 		int guessesRemaining = 6;
 		char guess;
 		boolean foundLetter;
-		int filledSpaces = 0;
+		
 		
 		while(guessesRemaining > 0){
 			guess = getLetter();
 			foundLetter = findLetter(guess);
+			int filledSpaces = 0;
 			if(foundLetter){
 				System.out.println("You found the Letter: " + guess);
 				for(int i = 0; i < guessedPhrase.size(); i++){
 					if(guessedPhrase.get(i) != '_'){
 						filledSpaces += 1;
-						if(filledSpaces == guessedPhrase.size()){
-							System.out.println("Congratulations, You Win!");
-						}
+						System.out.println(filledSpaces);
+						
 					}
+				}
+				if(filledSpaces == guessedPhrase.size()){
+							System.out.println("Congratulations, You Win!");
 					
 					
 				}
