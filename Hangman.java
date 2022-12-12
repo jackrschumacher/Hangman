@@ -51,12 +51,28 @@ public class Hangman {
 	}
 
 	private char getLetter() {
-		int guessesRemaing = 0;
+		boolean needValidInput = true;
 		Scanner input = new Scanner(System.in);
 		Character guess = ' ';
-		System.out.println("Please Enter a Letter that you wish to Guess");
-		guess = input.next().charAt(0);
-		guess = Character.toUpperCase(guess);
+		
+		while(needValidInput){
+			System.out.println("Please Enter a Letter that you wish to Guess");
+			guess = input.next().charAt(0);
+			guess = Character.toUpperCase(guess);
+
+			if(Character.isLetter(guess) == false){
+				System.out.println("You did not enter a letter");
+			}
+			else if(guessedLetters.indexOf(guess) != -1){
+				System.out.println("You already Entered That Letter");
+			}
+			else{
+				// If not -1, letter not found in the list, so letter is valid input
+				// Then add to guessedLetters list if found
+				needValidInput = false;
+				guessedLetters.add(guess);
+			}
+		}
 		
 		
 
@@ -96,9 +112,10 @@ public class Hangman {
 		int guessesRemaining = 6;
 		char guess;
 		boolean foundLetter;
+		boolean didntWin =true;
 		
 		
-		while(guessesRemaining > 0){
+		while(guessesRemaining > 0 && didntWin){
 			guess = getLetter();
 			foundLetter = findLetter(guess);
 			int filledSpaces = 0;
@@ -111,6 +128,7 @@ public class Hangman {
 				}
 				if(filledSpaces == guessedPhrase.size()){
 							System.out.println("Congratulations, You Win!");
+							didntWin = false;
 					
 					
 				}
@@ -123,10 +141,8 @@ public class Hangman {
 				System.out.println("You lost 1 guess.");
 				System.out.println("You have " + guessesRemaining+" guesses remaining");
 				
-				if(guessesRemaining == 0){
-					System.out.println("Unfortunatley, you did not win! Better luck next time.");
-				}
-				else if(guessesRemaining  == 5){
+				
+				if(guessesRemaining  == 5){
 					System.out.println("+---+\n"+
 														"|   |\n"+
 														"|\n"+
@@ -148,7 +164,7 @@ public class Hangman {
 					System.out.println("+---+\n"+
 														"|   |\n"+
 														"|   O\n"+
-														"|  -|-\n"+
+														"|  -|\n"+
 														"|\n"+
 														"|\n"+
 														"=========");
@@ -158,7 +174,7 @@ public class Hangman {
 														"|   |\n"+
 														"|   O\n"+
 													  "|  -|-\n"+
-														"|   [\n"+
+														"|   \n"+
 													  "| 	  \n"+
 													"=========");
 				}
@@ -167,9 +183,19 @@ public class Hangman {
 														"|   |\n"+
 														"|   O\n"+
 													  "|  -|-\n"+
-													  "|   []\n"+
+													  "|  [\n"+
 													  "|    \n"+
 													"=========");
+				}
+				else if(guessesRemaining == 0){
+					System.out.println("+---+\n"+
+														"|   |\n"+
+														"|   O\n"+
+													  "|  -|-\n"+
+													  "|  [ ]\n"+
+													  "|    \n"+
+													"=========");
+					System.out.println("Unfortunatley, you did not win! Better luck next time.");
 				}
 			}
 			
