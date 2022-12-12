@@ -10,8 +10,16 @@ public class Hangman {
 			"Dont Mine at Night", "No Ifs Ands or Buts", "Raining Cats and Dogs", "Keep On Truckin", "Short End of the Stick",
 			"Like Father Like Son", "Elvis Has Left The Building", "Don't put all your eggs in one basket",
 			"A blessing in disguise", "Beat around the bush", "Better late than never", "Break a leg",
-			"It's not rocket science", "On the ball", "Your guess is as good as mine", "You can say that again",
-			"Live and learn", "Kill two birds with one stone" };
+			"Its not rocket science", "On the ball", "Your guess is as good as mine", "You can say that again",
+			"Live and learn", "Kill two birds with one stone", "Run like the wind", "That ship has sailed",
+			"Fit as a fiddle", "Cut the mustard", "As right as rain", "An apple a day keeps the doctor away",
+			"Calm before the storm", "Curiosity killed the cat", "When it rains it pours", "Waste not want not",
+			"Time is money", "Through thick and thin", "Speak of the devil", "Once in a blue moon", "When pigs fly",
+			"Call it a day", "Hit the nail on the head", "The last straw", "A piece of cake", "All ears",
+			"Cant judge a book by its cover", "Cool as a cucumber", "Cry over spilled milk", "Easier said than done",
+			"Eat like a bird", "Find your feet", "Food for thought", "Keep your chin up", "Lose your marbles",
+			"Make ends meet", "Never in a million years", "On cloud nine", "Pull someone’s leg", "Square peg in a round hole",
+			"sit tight", "Up in the air", "What goes around comes around" };
 
 	// Create Variables for Game
 	private String currentPhraseStr;
