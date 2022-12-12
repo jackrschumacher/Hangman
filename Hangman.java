@@ -207,6 +207,8 @@ public class Hangman {
 							"|    \n" +
 							"=========");
 					System.out.println("Unfortunatley, you did not win! Better luck next time.");
+					System.out.println("The Correct Answer was:");
+					System.out.println(currentPhrase);
 				}
 			}
 
