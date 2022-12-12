@@ -83,13 +83,6 @@ public class Hangman {
 		}
 		
 		
-
-		// Get the guessed letter DONE
-		// Check to make sure that it already has not been guessed LATER
-		// Check to make sure that it is a letter -> No spaces, or special characters or
-		// numbers LATER? - Does java do this w/ out of bounds errors?
-		// To Do:
-		// Do loop with input until you get a valid guess
 		return guess;
 	}
 
@@ -106,23 +99,21 @@ public class Hangman {
 		return found;
 	}
 
-	// To Do:
-	// How to draw the Hangman?
-	// Make sure that letters are compared that are of same case -> When input
-	// taken, convert all to Upppercase
 
 	public void playGame() {
-		// System.out.println("Please enter a letter that you would like to find in the
-		// phrase.");
-			// If guessed Letter is equal to guessedLetters list (list of all the letters that the user has inputted) at the index of the current guess 
-			// Search for letter in the PHRASE_LIST
+			// Set up the variables, 6 guesses to find all the letters
 		
 		int guessesRemaining = 6;
 		char guess;
 		boolean foundLetter;
 		boolean didntWin =true;
 		
-		
+		// While the user has more than zero guesses remaining, and they havent won yet:
+		// Run getLetter() -> This returns your guess
+		// Check to see if the letter that the user has entered is in the word -> Run findLetter and store in foundLetter variable
+		// If found Letter:
+		// Check the filled spaces in the word ('_') and see if they match up with the length of the word, if they do, you win the game
+		// Print the guessed Phrase
 		while(guessesRemaining > 0 && didntWin){
 			guess = getLetter();
 			foundLetter = findLetter(guess);
@@ -143,6 +134,8 @@ public class Hangman {
 				System.out.println(guessedPhrase.toString());
 				
 			}
+			// If you do not find the letter, remove one guess remaining. 
+			// Depending on what guess that the user is on, print out the corresponding Hangman
 			else{
 				System.out.println("You did not find the Letter: " + guess);
 				guessesRemaining = guessesRemaining -1;
@@ -195,6 +188,7 @@ public class Hangman {
 													  "|    \n"+
 													"=========");
 				}
+				// If the user has used all of their guesses, they lose the game
 				else if(guessesRemaining == 0){
 					System.out.println("+---+\n"+
 														"|   |\n"+
