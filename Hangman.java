@@ -1,4 +1,3 @@
-
 // Import all packages inside java.util and java.lang
 import java.util.*;
 import java.lang.*;
@@ -108,8 +107,6 @@ public class Hangman {
 				for(int i = 0; i < guessedPhrase.size(); i++){
 					if(guessedPhrase.get(i) != '_'){
 						filledSpaces += 1;
-						System.out.println(filledSpaces);
-						
 					}
 				}
 				if(filledSpaces == guessedPhrase.size()){
@@ -128,7 +125,6 @@ public class Hangman {
 				
 				if(guessesRemaining == 0){
 					System.out.println("Unfortunatley, you did not win! Better luck next time.");
-					
 				}
 				else if(guessesRemaining  == 5){
 					System.out.println("+---+\n"+
@@ -162,7 +158,7 @@ public class Hangman {
 														"|   |\n"+
 														"|   O\n"+
 													  "|  -|-\n"+
-														"|   []\n"+
+														"|   [\n"+
 													  "| 	  \n"+
 													"=========");
 				}
