@@ -16,7 +16,8 @@ public class Hangman {
 	public ArrayList<Character> currentPhrase;
 
 	public Hangman() {
-		System.out.println("Hello!");
+		// Set up the Array lists and variables
+		// Call other functions and pass variables into them
 		currentPhraseStr = selectPhrase();
 		currentPhrase = new ArrayList<Character>();
 		guessedLetters = new ArrayList<Character>();
@@ -26,12 +27,15 @@ public class Hangman {
 	}
 
 	private String selectPhrase() {
+		// Select a random phrase from the array list and return it
 		return (PHRASE_LIST[(int) (Math.random() * PHRASE_LIST.length)]);
 	}
 
 	private void setupWord(String phrase) {
-		// Loops through the phrase and fills it in with underscores (_) and sets up the
-		// guessed and current phrase
+		// Sets all charachters to uppercase
+		// Add to current Phrase the current Letter
+		// Loops through the guessed phrase and fills it with underscores if there is a letter at that position, if not, it fills it in with a space
+		// Prints out guessed phrase
 		char letter;
 		for (int i = 0; i < phrase.length(); i++) {
 			letter = phrase.charAt(i);
@@ -44,13 +48,17 @@ public class Hangman {
 			}
 
 		}
-
+	
 		System.out.println("Guessed Phrase:" + guessedPhrase.toString());
 		
 		return;
 	}
 
 	private char getLetter() {
+		// Gets a letter from the user and stores it in the guess variable
+		// Assigns the letter to the guess variable and sets it to uppercase to help with exception handling
+		// Create needValidInput variable to ensure that the user only inputs a letter 
+		// Check if the lett is already entered by comparing the letter guessed to the list of stored letters
 		boolean needValidInput = true;
 		Scanner input = new Scanner(System.in);
 		Character guess = ' ';
